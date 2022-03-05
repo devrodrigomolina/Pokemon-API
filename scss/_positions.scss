@@ -1,0 +1,40 @@
+//########### FLEX-BOX
+
+@mixin between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin around {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+@mixin evenly {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+@mixin center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin start {
+    display: flex;
+    align-items: flex-start;
+}
+@mixin column {
+    flex-direction: column;
+}
+//########## GRIDS
+
+@mixin grid-items {
+    display: grid;
+    grid-template-columns: 5fr 5fr 5fr;
+    grid-template-rows: 233px 233px 233px;
+    grid-gap: 7px;
+}

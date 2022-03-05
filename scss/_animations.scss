@@ -1,0 +1,24 @@
+//######## H1 ANIMATION
+@mixin cursor-animate {
+    animation: cursor 500ms infinite normal;
+    @keyframes cursor {
+        from {border-right-color: rgba(255,255,255, 0.75)}
+        to {border-right-color: transparent;}
+    }
+}
+
+@mixin typing {
+    animation: identifier 3s 1s steps(90) normal both;
+    @keyframes identifier {
+        from {width: 0;}
+        to {width: 16em;}
+    }
+}
+//############# P ANIMATION
+@mixin paragrafo-main {
+    animation: p-anim 3s normal both;
+    @keyframes p-anim {
+        0% {opacity: 0; right: -600px;}
+        100% {opacity: 1; right: 90px;}
+    }
+}

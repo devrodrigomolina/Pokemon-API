@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+$font-poke-hollow: '/fonts/PokemonHollow.ttf';
+$font-poke-solid: '/fonts/PokemonSolid.ttf';
+$font-main: '/fonts/Ciutadella.ttf';
+
+@font-face {
+    font-family: 'Ciutadella';
+    src: url($font-main) format('truetype');   
+}
+@mixin special-elite-font {
+    font-family: 'Special Elite', cursive;
+}
+
+@mixin poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+@mixin font-menu {
+    font-size: 1.8rem;
+    font-weight: bold;
+    font-family: 'Ciutadella';
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+    color: white;
+}
+
+@mixin footer-menu {
+    font-size: 1rem;
+    color: white;
+    padding: 25px;
+    text-transform: uppercase;
+    
+}
+//############# INFOS MAIN TEXT
+
+@mixin h1-main-text {
+    max-width: 600px;
+    color: white;
+    font-size: 50px;
+    border-right: 2px solid rgba(255,255,255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    text-shadow: black 1px 1px 3px;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+@mixin font-paragrafo-main {
+    width: 450px;
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    font-family: 'Ciutadella';
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}

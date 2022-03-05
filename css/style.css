@@ -1,0 +1,284 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,800;1,100;1,200;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Ciutadella";
+  src: url("/fonts/Ciutadella.ttf") format("truetype");
+}
+header #check {
+  margin: 0;
+  position: absolute;
+  display: none;
+  z-index: 100;
+}
+header #check:checked ~ nav {
+  transform: translateX(290px);
+}
+header #check:checked + label span:nth-child(1) {
+  transform: rotate(-45deg);
+  top: 8px;
+}
+header #check:checked + label span:nth-child(2) {
+  opacity: 0;
+}
+header #check:checked + label span:nth-child(3) {
+  transform: rotate(45deg);
+  top: 8px;
+}
+header label {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  width: 35px;
+  height: 38px;
+  left: 130px;
+  top: 60px;
+  z-index: 100;
+}
+header label span {
+  position: absolute;
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 30px;
+  background: #FFCB05;
+  box-shadow: 1px 1px black;
+  transition: 0.25s ease-in-out;
+}
+header label span:nth-child(1) {
+  top: 0;
+}
+header label span:nth-child(2) {
+  top: 8px;
+}
+header label span:nth-child(3) {
+  top: 16px;
+}
+header nav {
+  flex-direction: column;
+  background: #141414;
+  width: 290px;
+  height: 100vh;
+  border-right: 4px solid #2A74BA;
+  position: absolute;
+  left: -290px;
+  transition: 0.3s ease-in-out;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  top: 70px;
+}
+header nav .logo p {
+  width: 100%;
+  height: 180px;
+  background: url("/images/pokemon-logo-2.png") center no-repeat;
+  background-size: 230px;
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 300px;
+}
+header nav ul li a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  font-family: "Ciutadella";
+  font-weight: normal;
+  font-style: normal;
+  text-transform: uppercase;
+  color: white;
+}
+header nav ul li a:hover {
+  color: #2A74BA;
+}
+header nav p {
+  font-size: 1rem;
+  color: white;
+  padding: 25px;
+  text-transform: uppercase;
+}
+
+main section .backbround-poke {
+  background: url("https://copag.com.br/images/bg-pokemon.png") center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  filter: brightness(40%);
+}
+main section .poke {
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  background: url("https://copag.com.br/images/img-pokemon.png") center no-repeat;
+  width: 850px;
+  height: 700px;
+  filter: blur(1px);
+}
+main .infos {
+  width: 600px;
+  position: absolute;
+  top: 210px;
+  left: 22vw;
+  font-family: "Poppins", sans-serif;
+}
+main .infos h1 {
+  animation: cursor 500ms infinite normal;
+  animation: identifier 3s 1s steps(90) normal both;
+  max-width: 600px;
+  color: white;
+  font-size: 50px;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: black 1px 1px 3px;
+  text-align: center;
+  padding-bottom: 25px;
+}
+@keyframes cursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes identifier {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16em;
+  }
+}
+main .infos h1 span {
+  color: #2A74BA;
+}
+main .infos > p {
+  animation: p-anim 3s normal both;
+  width: 450px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  font-family: "Ciutadella";
+  color: white;
+  font-size: 18px;
+}
+@keyframes p-anim {
+  0% {
+    opacity: 0;
+    right: -600px;
+  }
+  100% {
+    opacity: 1;
+    right: 90px;
+  }
+}
+main .infos .back {
+  position: absolute;
+  padding: 40px;
+  top: 60vh;
+  right: 580px;
+  box-shadow: 8px -8px 0 1px #fc6703 inset;
+  border-width: 0 0 2px 2px;
+  transform: rotate(45deg);
+}
+main .infos .back:hover {
+  box-shadow: 8px -8px 0 1px #e9e9e9 inset;
+  width: 90px;
+  height: 90px;
+}
+main .infos .next {
+  position: absolute;
+  padding: 40px;
+  top: 60vh;
+  right: -440px;
+  box-shadow: 8px -8px 0 1px #fc6703 inset;
+  border-width: 0 0 2px 2px;
+  color: white;
+  transform: rotate(230deg);
+}
+main .infos .next:hover {
+  box-shadow: 8px -8px 0 1px #e9e9e9 inset;
+  width: 90px;
+  height: 90px;
+}
+main .cards {
+  display: grid;
+  grid-template-columns: 5fr 5fr 5fr;
+  grid-template-rows: 233px 233px 233px;
+  grid-gap: 7px;
+  animation: p-anim 3s normal both;
+  width: 450px;
+  margin: auto;
+  position: absolute;
+  text-align: center;
+  font-family: "Ciutadella";
+  color: white;
+  font-size: 18px;
+}
+@keyframes p-anim {
+  0% {
+    opacity: 0;
+    right: -600px;
+  }
+  100% {
+    opacity: 1;
+    right: 90px;
+  }
+}
+main .cards .itens {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: rgba(0, 0, 0, 0.568);
+  width: 280px;
+  text-align: end;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.486);
+  position: relative;
+}
+main .cards .itens > img {
+  width: 200px;
+  position: absolute;
+  margin-top: 55px;
+}
+main .cards .itens > p {
+  text-shadow: 2px 2px 3px black;
+  z-index: 3;
+  color: #f3f3f3;
+}
+main .cards .itens > .name {
+  font-size: 25px;
+  color: #2A74BA;
+  text-transform: uppercase;
+  border-bottom: 2px solid white;
+  width: 150px;
+}
+main .cards .itens:hover {
+  background: #2A74BA;
+}
+
+/*# sourceMappingURL=style.css.map */

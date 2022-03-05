@@ -1,0 +1,161 @@
+@use 'reset';
+@use 'mixins';
+@use 'colors';
+@use 'images';
+@use 'sizes';
+@use 'positions';
+@use 'fonts';
+@use 'animations';
+
+header {
+    #check {
+        @include mixins.check-menu;
+        @include mixins.validations-menu;
+    }
+    
+    label {
+        @include mixins.label-menu;
+        span {
+            @include mixins.span-menu;
+            
+            $top-value: 0;
+            @for $i from 1 through 3 {
+                &:nth-child(#{$i}) {
+                    top: $top-value;
+                }
+                $top-value: $top-value + 8px;
+            }
+        }
+    }
+    
+    nav {
+        @include mixins.nav;
+        @include positions.between;
+        .logo {
+            @include mixins.logo-nav;
+            p{
+                @include mixins.logo-configs;
+            }
+        }
+        
+        ul {
+            @include positions.around;
+            height: 300px;
+            li {
+                a{
+                    @include fonts.font-menu;
+                    &:hover{
+                        color: colors.$blue-pok-color;
+                    }
+                }
+            }
+        }
+        
+        p{
+            @include fonts.footer-menu;
+        }
+    }
+}
+
+main {
+    section {
+        .backbround-poke {
+            @include mixins.img-bg;
+        }
+        .poke {
+            @include mixins.img-poke-bg;
+            filter: blur(1px);
+        }
+    }
+    .infos {
+        @include mixins.infos;
+        @include fonts.poppins-font;
+        h1 {
+            @include animations.cursor-animate; 
+            @include animations.typing;
+            @include fonts.h1-main-text;
+            span {
+                color: colors.$blue-pok-color;
+            }
+            
+        }
+        & > p {
+            @include animations.paragrafo-main;
+            @include fonts.font-paragrafo-main;
+            
+        }
+
+        .back {
+            position: absolute;
+            padding: 40px;
+            top: 60vh;
+            right: 580px;
+            box-shadow: 8px -8px 0 1px rgb(252, 103, 3) inset;
+            border-width: 0 0 2px 2px;
+            transform: rotate(45deg); 
+            &:hover {
+                box-shadow: 8px -8px 0 1px rgb(233, 233, 233) inset;
+                width: 90px;
+                height: 90px;
+            }
+        }   
+        .next {
+            position: absolute;
+            padding: 40px;
+            top: 60vh;
+            right: -440px;
+            box-shadow: 8px -8px 0 1px rgb(252, 103, 3) inset;
+            border-width: 0 0 2px 2px;
+            color: white;
+            transform: rotate(230deg); 
+            &:hover {
+                box-shadow: 8px -8px 0 1px rgb(233, 233, 233) inset;
+                width: 90px;
+                height: 90px;
+            }
+        }   
+
+    }
+    .cards {
+        @include positions.grid-items;
+        @include animations.paragrafo-main;
+        @include fonts.font-paragrafo-main;
+        
+
+        .itens {
+            @include positions.evenly;
+    
+            background-color: rgba(0, 0, 0, 0.568);
+            width: 280px;
+            text-align: end;
+            box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.486);
+            position: relative;
+            
+            & > img {
+                width: 200px;
+                position: absolute;
+                margin-top: 55px;
+                @include positions.grid-items;
+                 @include animations.paragrafo-main;
+                @include fonts.font-paragrafo-main;
+            }
+            
+            & > p {
+                text-shadow: 2px 2px 3px black;
+                z-index: 3;
+                color: rgb(243, 243, 243);
+            }  
+            & > .name {
+                font-size: 25px;
+                color: colors.$blue-pok-color;
+                text-transform: uppercase;
+                border-bottom: 2px solid white;
+                width: 150px;
+            }
+            &:hover {
+                background: colors.$blue-pok-color;
+            }
+        }    
+   
+    }
+}
